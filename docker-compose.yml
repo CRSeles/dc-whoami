@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  whoami:
+    image: emilevauge/whoami
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:test.example.com"
+      - "traefik.frontend.passHostHeader=true"
+      - "traefik.frontend.headers.SSLRedirect=true"
